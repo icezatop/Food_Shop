@@ -24,6 +24,7 @@ public class TableController {
             e.printStackTrace();
         }
     }
+    // set table one
     @FXML public void one(ActionEvent event){
         one = (Button) event.getSource();
         Stage stage = (Stage) one.getScene().getWindow();
@@ -35,6 +36,7 @@ public class TableController {
             e.printStackTrace();
         }
     }
+    // set table two
     @FXML public void two(ActionEvent event){
         two = (Button) event.getSource();
         Stage stage = (Stage) two.getScene().getWindow();
@@ -46,6 +48,7 @@ public class TableController {
             e.printStackTrace();
         }
     }
+    // set table tree
     @FXML public void tree(ActionEvent event){
         tree = (Button) event.getSource();
         Stage stage = (Stage) tree.getScene().getWindow();

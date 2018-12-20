@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Main2Controller {
     @FXML
     Button orderMenu, check, back;
-
+// go to order system
     @FXML public void gotoOrder(ActionEvent event){
         orderMenu = (Button) event.getSource();
         Stage stage = (Stage) orderMenu.getScene().getWindow();
@@ -24,6 +24,7 @@ public class Main2Controller {
             e.printStackTrace();
         }
     }
+    // go to check system
     @FXML public void gotoCheck(ActionEvent event){
         check = (Button) event.getSource();
         Stage stage = (Stage) check.getScene().getWindow();
@@ -35,6 +36,7 @@ public class Main2Controller {
             e.printStackTrace();
         }
     }
+    // back to table system
     @FXML public void toBack(ActionEvent event){
         back = (Button) event.getSource();
         Stage stage = (Stage) back.getScene().getWindow();

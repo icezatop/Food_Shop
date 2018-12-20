@@ -115,7 +115,7 @@ public class database {
             e.printStackTrace();
         }
     }
-    public  static void addTolist(String name,String price){
+    public  static void addTolist(String name, String price){
         try {
             Class.forName(driver);
             Connection connection = DriverManager.getConnection(urlDB);

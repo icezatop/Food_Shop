@@ -25,7 +25,7 @@ public class OrderController {
     TableColumn <Schedule,String>nameMenu,nameList,priceMenu,priceList,typeMenu;
 
 
-
+// back to Table system
     @FXML public void toBack(ActionEvent event){
         back = (Button) event.getSource();
         Stage stage = (Stage) back.getScene().getWindow();
@@ -37,6 +37,7 @@ public class OrderController {
             e.printStackTrace();
         }
     }
+    // back to home scaen
     @FXML public void gotoHome(ActionEvent event){
         home = (Button) event.getSource();
         Stage stage = (Stage) home.getScene().getWindow();
@@ -51,7 +52,7 @@ public class OrderController {
 
     ObservableList<Schedule> Data= FXCollections.observableArrayList();
     ObservableList<Schedule> Data2 = FXCollections.observableArrayList();
-
+//
     public void Start(){
         Data.clear();
         if(menuChoiceBox.getValue().equals("All")){
@@ -115,19 +116,22 @@ public class OrderController {
         priceList.setCellValueFactory(new PropertyValueFactory<Schedule,String>("price"));
         list.setItems(Data2);
     }
+    // show order
     @FXML
     public void ShowBth(){
         Start();
     }
+    // sent order to list table
     public void addBtn(){
         if(!menu.getSelectionModel().isEmpty())
             Data2.add(menu.getSelectionModel().getSelectedItem());
+
     }
+    // delete order from list table
     public void setDelete(){
         if(!list.getSelectionModel().isEmpty()){
             Data2.remove(list.getSelectionModel().getSelectedItem());
         }
 
     }
-    public
 }

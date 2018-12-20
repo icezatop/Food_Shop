@@ -23,7 +23,7 @@ public class CheckController {
     @FXML
     TableColumn<Schedule,String>name,price;
 
-
+// back to home scaen
     @FXML public void toMainPageBtn(ActionEvent event){
         home = (Button) event.getSource();
         Stage stage = (Stage) home.getScene().getWindow();
@@ -36,9 +36,6 @@ public class CheckController {
         }
     }
 
-    public void addBtn(){
-        if(!menu.getSelectionModel().isEmpty())
-            Data2.add(menu.getSelectionModel().getSelectedItem());
-    }
+
 
 }

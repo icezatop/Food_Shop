@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Main1Controller {
     @FXML
     Button addMenu,order;
-
+// go to add new menu system
     @FXML public void gotoAddMenu(ActionEvent event){
         addMenu = (Button) event.getSource();
         Stage stage = (Stage) addMenu.getScene().getWindow();
@@ -24,6 +24,7 @@ public class Main1Controller {
             e.printStackTrace();
         }
     }
+    // go to order system
     @FXML public void gotoOrder(ActionEvent event){
         order = (Button) event.getSource();
         Stage stage = (Stage) order.getScene().getWindow();

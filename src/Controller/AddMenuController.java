@@ -15,7 +15,7 @@ public class AddMenuController {
     Button add , back;
     @FXML
     TextField name,price,type;
-
+// back button
     @FXML public void backBtn(ActionEvent event){
         back = (Button) event.getSource();
         Stage stage = (Stage) back.getScene().getWindow();
@@ -27,7 +27,7 @@ public class AddMenuController {
             e.printStackTrace();
         }
     }
-
+// add new Menu
     @FXML public void addCourseBtn(){
         database.addCourse(name.getText(),price.getText(),type.getText());
         name.clear();
