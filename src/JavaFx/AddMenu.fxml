@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddMenuController">
+   <children>
+      <TextField fx:id="name" layoutX="114.0" layoutY="220.0" prefHeight="87.0" prefWidth="381.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="price" layoutX="113.0" layoutY="382.0" prefHeight="87.0" prefWidth="381.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="type" layoutX="114.0" layoutY="555.0" prefHeight="87.0" prefWidth="381.0">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Label layoutX="128.0" layoutY="155.0" prefHeight="53.0" prefWidth="150.0" text="ชื่ออาหาร">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="125.0" layoutY="330.0" text="ราคา">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="121.0" layoutY="512.0" text="Type">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="544.0" layoutY="73.0" text="เพิ่มเมนูอาหาร">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Button fx:id="add" layoutX="829.0" layoutY="298.0" mnemonicParsing="false" onAction="#addCourseBtn" prefHeight="83.0" prefWidth="228.0" text="เพิ่ม">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Button>
+      <Button fx:id="back" layoutX="91.0" layoutY="36.0" mnemonicParsing="false" onAction="#backBtn" prefHeight="51.0" prefWidth="97.0" text="กลับ">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
