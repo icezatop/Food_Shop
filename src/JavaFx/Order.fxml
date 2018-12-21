@@ -44,7 +44,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="sendOrder" layoutX="1083.0" layoutY="632.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="99.0" text="ส่งรายการ">
+      <Button fx:id="sendOrder" layoutX="1083.0" layoutY="632.0" mnemonicParsing="false" onAction="#sentBtn" prefHeight="40.0" prefWidth="99.0" text="ส่งรายการ">
          <font>
             <Font size="18.0" />
          </font>

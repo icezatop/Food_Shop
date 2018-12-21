@@ -98,7 +98,6 @@ public class OrderController {
     }
 
     public void initialize(){
-        System.out.println("hello");
         nameMenu.setCellValueFactory(new PropertyValueFactory<Schedule,String>("name"));
         priceMenu.setCellValueFactory(new PropertyValueFactory<Schedule,String>("price"));
         typeMenu.setCellValueFactory(new PropertyValueFactory<Schedule,String>("type"));
@@ -116,6 +115,8 @@ public class OrderController {
         priceList.setCellValueFactory(new PropertyValueFactory<Schedule,String>("price"));
         list.setItems(Data2);
     }
+
+
     // show order
     @FXML
     public void ShowBth(){
@@ -134,4 +135,12 @@ public class OrderController {
         }
 
     }
+
+    public void sentBtn(){
+        for(Schedule x : Data2){
+            database.addTolist(x.getName(),x.getPrice());
+        }
+    }
+
+
 }

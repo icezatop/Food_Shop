@@ -119,7 +119,7 @@ public class database {
         try {
             Class.forName(driver);
             Connection connection = DriverManager.getConnection(urlDB);
-            String query = "Insert Into list Values('"+name+"','"+price+"')";
+            String query = "Insert Into table1 Values('"+name+"','"+price+"')";
             Statement stmt = connection.createStatement();
             stmt.executeUpdate(query);
             connection.close();
@@ -130,5 +130,62 @@ public class database {
             e.printStackTrace();
         }
     }
+    public  static void addEmploy(String id,String password,String name){
+        try {
+            Class.forName(driver);
+            Connection connection = DriverManager.getConnection(urlDB);
+            String query = "Insert Into employes Values('"+id+"','"+password+"','"+name+"')";
+            Statement stmt = connection.createStatement();
+            stmt.executeUpdate(query);
+            connection.close();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public static boolean login(String id,String password){
+        try {
+            Class.forName(driver);
+            Connection connection = DriverManager.getConnection(urlDB);
+            String query = "Select * From employes Where id = '" + id +"' and password = '"+ password+"'";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            connection.close();
+            if (resultSet.next()) {
+                return true;
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public static String userinfo(String id){
+        String s = "";
+        try {
+            Class.forName(driver);
+            Connection connection = DriverManager.getConnection(urlDB);
+            String query = "Select * From employes Where id = '"+ id + "'";
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            if (resultSet.next()) {
+                s +=resultSet.getString("id") +":"+ resultSet.getString("password");
+            }
+            connection.close();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return s;
+    }
+
+
 
 }

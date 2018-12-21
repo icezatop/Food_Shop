@@ -1,5 +1,7 @@
 package Controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +13,7 @@ import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.*;
 
 
 public class CheckController {
@@ -35,6 +38,33 @@ public class CheckController {
             e.printStackTrace();
         }
     }
+
+    public void setTotalPrice(){
+
+    }
+    ObservableList<Schedule2> Data= FXCollections.observableArrayList();
+    public void Start(){
+        String driver = "org.sqlite.JDBC";
+        String urlDB = "jdbc:sqlite:FoodShop.db";
+        try{
+            Class.forName(driver);
+            Connection connection = DriverManager.getConnection(urlDB);
+            Statement statement = connection.createStatement();
+            String sql = "Select * From list";
+            ResultSet resultSet = statement.executeQuery(sql);
+            while(resultSet.next()){
+                Data.add(new Schedule2(resultSet.getString("name"),resultSet.getString("price")));
+
+            }
+            connection.close();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
 
 
