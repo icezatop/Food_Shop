@@ -83,11 +83,11 @@ public class database {
         }
         return s;
     }
-    public static void remove(String name,String price,String type){
+    public static void remove(){
         try {
             Class.forName(driver);
             Connection connection = DriverManager.getConnection(urlDB);
-            String query = "Delete From list";
+            String query = "Delete From table1";
             Statement stmt = connection.createStatement();
             stmt.executeUpdate(query);
             connection.close();

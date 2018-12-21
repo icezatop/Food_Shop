@@ -30,27 +30,27 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="totalPrice" layoutX="894.0" layoutY="240.0" prefHeight="78.0" prefWidth="305.0" text="Label" textAlignment="RIGHT">
+      <Label fx:id="totalPrice" layoutX="894.0" layoutY="240.0" prefHeight="78.0" prefWidth="305.0" textAlignment="RIGHT">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="dis10" layoutX="698.0" layoutY="373.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="130.0" text="ลด 10%">
+      <Button fx:id="dis10" layoutX="698.0" layoutY="373.0" mnemonicParsing="false" onAction="#setDis10" prefHeight="63.0" prefWidth="130.0" text="ลด 10%">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="dis15" layoutX="892.0" layoutY="374.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="130.0" text="ลด 15%">
+      <Button fx:id="dis15" layoutX="892.0" layoutY="374.0" mnemonicParsing="false" onAction="#setDis15" prefHeight="63.0" prefWidth="130.0" text="ลด 15%">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="dis20" layoutX="1087.0" layoutY="374.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="130.0" text="ลด 20%">
+      <Button fx:id="dis20" layoutX="1087.0" layoutY="374.0" mnemonicParsing="false" onAction="#setDis20" prefHeight="63.0" prefWidth="130.0" text="ลด 20%">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="check" layoutX="857.0" layoutY="529.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="205.0" text="Check">
+      <Button fx:id="check" layoutX="857.0" layoutY="529.0" mnemonicParsing="false" onAction="#setCheck" prefHeight="75.0" prefWidth="205.0" text="Check">
          <font>
             <Font size="24.0" />
          </font>
