@@ -35,6 +35,7 @@ public class TableController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
     // set table two
     @FXML public void two(ActionEvent event){
