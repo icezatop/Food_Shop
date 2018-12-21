@@ -1,5 +1,7 @@
 package Controller;
 
+import javafx.collections.ObservableList;
+
 import java.sql.*;
 import java.util.Arrays;
 
@@ -115,11 +117,11 @@ public class database {
             e.printStackTrace();
         }
     }
-    public  static void addTolist(String name, String price){
+    public  static void addTolist(String name, String price,String table){
         try {
             Class.forName(driver);
             Connection connection = DriverManager.getConnection(urlDB);
-            String query = "Insert Into table1 Values('"+name+"','"+price+"')";
+            String query = "Insert Into table1 Values('"+name+"','"+price+"','"+table+"')";
             Statement stmt = connection.createStatement();
             stmt.executeUpdate(query);
             connection.close();
@@ -184,6 +186,37 @@ public class database {
             e.printStackTrace();
         }
         return s;
+    }
+    public  static void addTokitchen(String name, String table){
+        try {
+            Class.forName(driver);
+            Connection connection = DriverManager.getConnection(urlDB);
+            String query = "Insert Into kitchen Values('"+name+"','"+table+"')";
+            Statement stmt = connection.createStatement();
+            stmt.executeUpdate(query);
+            connection.close();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+    public static void removeKit(ObservableList<Schedule3> selectedItems){
+        try {
+            Class.forName(driver);
+            Connection connection = DriverManager.getConnection(urlDB);
+            String query = "Delete From kitchen Where = '"+ selectedItems + "'";
+            Statement stmt = connection.createStatement();
+            stmt.executeUpdate(query);
+            connection.close();
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
     }
 
 

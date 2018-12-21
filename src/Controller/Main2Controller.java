@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -12,6 +14,8 @@ import java.io.IOException;
 public class Main2Controller {
     @FXML
     Button orderMenu, check, back;
+    @FXML
+    ChoiceBox<String> table;
 // go to order system
     @FXML public void gotoOrder(ActionEvent event){
         orderMenu = (Button) event.getSource();

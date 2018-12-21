@@ -54,6 +54,7 @@ public class AddMenuController extends OrderController{
     public void Start() {
         super.Start();
     }
+    @Override
     public void initialize() {
         nameMenu.setCellValueFactory(new PropertyValueFactory<Schedule, String>("name"));
         priceMenu.setCellValueFactory(new PropertyValueFactory<Schedule, String>("price"));

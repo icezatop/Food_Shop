@@ -6,10 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import java.io.IOException;
@@ -19,13 +16,16 @@ import java.util.ArrayList;
 
 public class CheckController {
     @FXML
-    Button home,dis10,dis15,dis20,check;
+    ChoiceBox<String>choiceBox;
+    @FXML
+    Button home,dis10,dis15,dis20,check,show;
     @FXML
     Label totalPrice;
     @FXML
     TableView listCheck;
     @FXML
-    TableColumn<Schedule2,String>name,price;
+    TableColumn<Schedule2,String>name,price,table;
+
     ObservableList<Schedule2> Data= FXCollections.observableArrayList();
     ArrayList<Schedule2> kawin = Start();
     double total=0;
@@ -42,9 +42,6 @@ public class CheckController {
         }
     }
 
-    public void setTotalPrice(){
-
-    }
     public ArrayList<Schedule2> Start(){
         ArrayList<Schedule2> arrayList = new ArrayList<>();
         String driver = "org.sqlite.JDBC";
@@ -56,7 +53,7 @@ public class CheckController {
             String sql = "Select * From table1";
             ResultSet resultSet = statement.executeQuery(sql);
             while(resultSet.next()){
-                arrayList.add(new Schedule2(resultSet.getString("name"),resultSet.getString("price")));
+                arrayList.add(new Schedule2(resultSet.getString("name"),resultSet.getString("price"),resultSet.getString("table")));
 
             }
             connection.close();
@@ -71,7 +68,7 @@ public class CheckController {
     public void addfunc(){
         Data.clear();
         for(Schedule2 x : kawin)
-            Data.add(new Schedule2(x.getName(),x.getPrice()));
+            Data.add(new Schedule2(x.getName(),x.getPrice(),x.getTable()));
         setTotal();
     }
 
@@ -85,9 +82,13 @@ public class CheckController {
     public void initialize() {
         name.setCellValueFactory(new PropertyValueFactory<>("name"));
         price.setCellValueFactory(new PropertyValueFactory<>("price"));
+        table.setCellValueFactory(new PropertyValueFactory<>("table"));
 
         listCheck.setItems(Data);
         addfunc();
+        choiceBox.getItems().add("1");
+        choiceBox.getItems().add("2");
+        choiceBox.getItems().add("3");
 
     }
     public void setDis10(){
@@ -113,6 +114,18 @@ public class CheckController {
         database.remove();
         totalPrice.setText("0");
         Data.clear();
+    }
+    public void setShow(){
+        String tableeeee = choiceBox.getValue();
+        Data.clear();
+        total = 0;
+        for(Schedule2 x : kawin){
+            if(x.getTable().equalsIgnoreCase(tableeeee)){
+                Data.add(new Schedule2(x.getName(),x.getPrice(),x.getTable()));
+                total += Double.parseDouble(x.getPrice());
+            }
+        }
+        totalPrice.setText(String.valueOf(total));
     }
 }
 

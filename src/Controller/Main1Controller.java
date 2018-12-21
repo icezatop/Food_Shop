@@ -47,5 +47,16 @@ public class Main1Controller {
             e.printStackTrace();
         }
     }
+    @FXML public void gotoKitchen(ActionEvent event){
+        order = (Button) event.getSource();
+        Stage stage = (Stage) order.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/JavaFx/kitchen.fxml"));
+        try {
+            stage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

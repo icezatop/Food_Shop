@@ -18,11 +18,11 @@ public class OrderController {
     @FXML
     Button back, home, addToList, delete,sendOrder,show;
     @FXML
-    ChoiceBox <String> menuChoiceBox;
+    ChoiceBox <String> menuChoiceBox,listTable;
     @FXML
     TableView <Schedule> menu,list;
     @FXML
-    TableColumn <Schedule,String>nameMenu,nameList,priceMenu,priceList,typeMenu;
+    TableColumn <Schedule,String>nameMenu,nameList,priceMenu,priceList,typeMenu,table;
 
 
 // back to Table system
@@ -114,6 +114,10 @@ public class OrderController {
         nameList.setCellValueFactory(new PropertyValueFactory<Schedule,String>("name"));
         priceList.setCellValueFactory(new PropertyValueFactory<Schedule,String>("price"));
         list.setItems(Data2);
+
+        listTable.getItems().add("1");
+        listTable.getItems().add("2");
+        listTable.getItems().add("3");
     }
 
 
@@ -135,10 +139,10 @@ public class OrderController {
         }
 
     }
-
     public void sentBtn(){
         for(Schedule x : Data2){
-            database.addTolist(x.getName(),x.getPrice());
+            database.addTolist(x.getName(),x.getPrice(),listTable.getValue());
+            database.addTokitchen(x.getName(),listTable.getValue());
         }
     }
 
