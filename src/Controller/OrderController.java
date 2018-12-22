@@ -29,7 +29,7 @@ public class OrderController {
     @FXML public void toBack(ActionEvent event){
         back = (Button) event.getSource();
         Stage stage = (Stage) back.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/JavaFx/Table.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/JavaFx/Main2.fxml"));
         try {
             stage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
             stage.show();
@@ -52,6 +52,7 @@ public class OrderController {
 
     ObservableList<Schedule> Data= FXCollections.observableArrayList();
     ObservableList<Schedule> Data2 = FXCollections.observableArrayList();
+    ObservableList<Schedule4>Data4 = FXCollections.observableArrayList();
 //
     public void Start(){
         Data.clear();
@@ -143,6 +144,9 @@ public class OrderController {
         for(Schedule x : Data2){
             database.addTolist(x.getName(),x.getPrice(),listTable.getValue());
             database.addTokitchen(x.getName(),listTable.getValue());
+        }
+        for(Schedule4 x : Data4){
+            database.addToincome(x.getName(),x.getPrice());
         }
     }
 
