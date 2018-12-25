@@ -33,7 +33,7 @@ public class CheckController {
     @FXML public void toMainPageBtn(ActionEvent event){
         home = (Button) event.getSource();
         Stage stage = (Stage) home.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/JavaFx/Main1.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/JavaFx/Main2.fxml"));
         try {
             stage.setScene(new Scene(fxmlLoader.load(), 1280, 720));
             stage.show();
