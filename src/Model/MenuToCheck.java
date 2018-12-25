@@ -1,14 +1,25 @@
-package Controller;
+package Model;
 
 import javafx.beans.property.SimpleStringProperty;
 
-public class Schedule2 {
+public class MenuToCheck {
     private final SimpleStringProperty name;
     private final SimpleStringProperty price;
     private final SimpleStringProperty table;
 
+    public void setName(String name) {
+        this.name.set(name);
+    }
 
-    public Schedule2(String name, String price,String table) {
+    public void setPrice(String price) {
+        this.price.set(price);
+    }
+
+    public void setTable(String table) {
+        this.table.set(table);
+    }
+
+    public MenuToCheck(String name, String price, String table) {
         this.name = new SimpleStringProperty(name);
         this.price = new SimpleStringProperty(price);
         this.table = new SimpleStringProperty(table);
