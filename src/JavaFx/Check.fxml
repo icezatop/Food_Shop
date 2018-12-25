@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CheckController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFF8DC;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CheckController">
    <children>
       <Label layoutX="584.0" layoutY="54.0" prefHeight="53.0" prefWidth="119.0" text="เช็คบิล">
          <font>
@@ -32,32 +32,33 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Button fx:id="dis10" layoutX="698.0" layoutY="373.0" mnemonicParsing="false" onAction="#setDis10" prefHeight="63.0" prefWidth="130.0" text="ลด 10%">
+      <Button fx:id="dis10" layoutX="698.0" layoutY="373.0" mnemonicParsing="false" onAction="#setDis10" prefHeight="63.0" prefWidth="130.0" style="-fx-background-color: #3598db;" text="ลด 10%">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="dis15" layoutX="892.0" layoutY="374.0" mnemonicParsing="false" onAction="#setDis15" prefHeight="63.0" prefWidth="130.0" text="ลด 15%">
+      <Button fx:id="dis15" layoutX="892.0" layoutY="374.0" mnemonicParsing="false" onAction="#setDis15" prefHeight="63.0" prefWidth="130.0" style="-fx-background-color: #3598db;" text="ลด 15%">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="dis20" layoutX="1087.0" layoutY="374.0" mnemonicParsing="false" onAction="#setDis20" prefHeight="63.0" prefWidth="130.0" text="ลด 20%">
+      <Button fx:id="dis20" layoutX="1087.0" layoutY="374.0" mnemonicParsing="false" onAction="#setDis20" prefHeight="63.0" prefWidth="130.0" style="-fx-background-color: #3598db;" text="ลด 20%">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="check" layoutX="857.0" layoutY="529.0" mnemonicParsing="false" onAction="#setCheck" prefHeight="75.0" prefWidth="205.0" text="Check">
+      <Button fx:id="check" layoutX="857.0" layoutY="529.0" mnemonicParsing="false" onAction="#setCheck" prefHeight="75.0" prefWidth="205.0" style="-fx-background-color: #20b1aa;" text="Check">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="home" layoutX="79.0" layoutY="47.0" mnemonicParsing="false" onAction="#toMainPageBtn" prefHeight="46.0" prefWidth="103.0" text="หน้าหลัก">
+      <Button fx:id="home" layoutX="79.0" layoutY="47.0" mnemonicParsing="false" onAction="#toMainPageBtn" prefHeight="46.0" prefWidth="103.0" style="-fx-background-color: #20b1aa;" text="หน้าหลัก">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <ChoiceBox fx:id="choiceBox" layoutX="246.0" layoutY="67.0" prefWidth="150.0" />
-      <Button fx:id="show" layoutX="431.0" layoutY="68.0" mnemonicParsing="false" onAction="#setShow" prefHeight="32.0" prefWidth="75.0" text="แสดง" />
+      <ChoiceBox fx:id="choiceBox" layoutX="244.0" layoutY="134.0" prefWidth="150.0" style="-fx-background-color: #20b1aa;" />
+      <Button fx:id="show" layoutX="422.0" layoutY="131.0" mnemonicParsing="false" onAction="#setShow" prefHeight="32.0" prefWidth="75.0" style="-fx-background-color: #20b1aa;" text="แสดง" />
+      <Label layoutX="174.0" layoutY="129.0" prefHeight="35.0" prefWidth="55.0" text="เลือกโต๊ะ" />
    </children>
 </Pane>

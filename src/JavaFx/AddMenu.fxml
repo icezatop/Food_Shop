@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddMenuController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #FFF8DC;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AddMenuController">
    <children>
       <TextField fx:id="name" layoutX="114.0" layoutY="220.0" prefHeight="87.0" prefWidth="381.0">
          <font>
@@ -43,12 +43,12 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <Button fx:id="add" layoutX="532.0" layoutY="378.0" mnemonicParsing="false" onAction="#addCourseBtn" prefHeight="43.0" prefWidth="116.0" text="เพิ่ม">
+      <Button fx:id="add" layoutX="532.0" layoutY="378.0" mnemonicParsing="false" onAction="#addCourseBtn" prefHeight="43.0" prefWidth="116.0" style="-fx-background-color: #20b1aa;" text="เพิ่ม">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button fx:id="back" layoutX="91.0" layoutY="36.0" mnemonicParsing="false" onAction="#backBtn" prefHeight="51.0" prefWidth="97.0" text="กลับ">
+      <Button fx:id="back" layoutX="91.0" layoutY="36.0" mnemonicParsing="false" onAction="#backBtn" prefHeight="51.0" prefWidth="97.0" style="-fx-background-color: #20b1aa;" text="กลับ">
          <font>
             <Font size="24.0" />
          </font>
@@ -60,12 +60,17 @@
             <TableColumn fx:id="typeMenu" prefWidth="156.7999267578125" text="type" />
         </columns>
       </TableView>
-      <Button fx:id="delete" layoutX="534.0" layoutY="519.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="119.0" text="ลบ">
+      <Button fx:id="delete" layoutX="534.0" layoutY="519.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="119.0" style="-fx-background-color: #f18180;" text="ลบ">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <ChoiceBox fx:id="menuChoiceBox" layoutX="936.0" layoutY="76.0" prefHeight="36.0" prefWidth="190.0" />
-      <Button fx:id="show" layoutX="841.0" layoutY="82.0" mnemonicParsing="false" onAction="#ShowBth" text="แสดง" />
+      <ChoiceBox fx:id="menuChoiceBox" layoutX="892.0" layoutY="77.0" prefHeight="36.0" prefWidth="190.0" style="-fx-background-color: #20b1aa;" />
+      <Button fx:id="show" layoutX="841.0" layoutY="82.0" mnemonicParsing="false" onAction="#ShowBth" style="-fx-background-color: #20b1aa;" text="แสดง" />
+      <Label layoutX="1100.0" layoutY="77.0" prefHeight="35.0" prefWidth="87.0" text="เลือกType">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

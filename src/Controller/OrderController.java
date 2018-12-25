@@ -1,5 +1,8 @@
 package Controller;
 
+import Model.Menu;
+import Testing.Schedule4;
+import Model.database;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -8,7 +11,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,9 +22,9 @@ public class OrderController {
     @FXML
     ChoiceBox <String> menuChoiceBox,listTable;
     @FXML
-    TableView <Schedule> menu,list;
+    TableView <Model.Menu> menu,list;
     @FXML
-    TableColumn <Schedule,String>nameMenu,nameList,priceMenu,priceList,typeMenu,table;
+    TableColumn <Model.Menu,String>nameMenu,nameList,priceMenu,priceList,typeMenu,table;
 
 
 // back to Table system
@@ -50,8 +52,8 @@ public class OrderController {
         }
     }
 
-    ObservableList<Schedule> Data= FXCollections.observableArrayList();
-    ObservableList<Schedule> Data2 = FXCollections.observableArrayList();
+    ObservableList<Model.Menu> Data= FXCollections.observableArrayList();
+    ObservableList<Model.Menu> Data2 = FXCollections.observableArrayList();
     ObservableList<Schedule4>Data4 = FXCollections.observableArrayList();
 //
     public void Start(){
@@ -66,7 +68,7 @@ public class OrderController {
                 String sql = "Select * From menu";
                 ResultSet resultSet = statement.executeQuery(sql);
                 while(resultSet.next()){
-                    Data.add(new Schedule(resultSet.getString("name"),resultSet.getString("price"),resultSet.getString("type")));
+                    Data.add(new Model.Menu(resultSet.getString("name"),resultSet.getString("price"),resultSet.getString("type")));
 
                 }
                 connection.close();
@@ -86,7 +88,7 @@ public class OrderController {
                 String sql = "Select * From menu Where type = '"+menuChoiceBox.getValue() + "'";
                 ResultSet resultSet = statement.executeQuery(sql);
                 while(resultSet.next()){
-                    Data.add(new Schedule(resultSet.getString("name"),resultSet.getString("price"),resultSet.getString("type")));
+                    Data.add(new Model.Menu(resultSet.getString("name"),resultSet.getString("price"),resultSet.getString("type")));
 
                 }
                 connection.close();
@@ -99,9 +101,9 @@ public class OrderController {
     }
 
     public void initialize(){
-        nameMenu.setCellValueFactory(new PropertyValueFactory<Schedule,String>("name"));
-        priceMenu.setCellValueFactory(new PropertyValueFactory<Schedule,String>("price"));
-        typeMenu.setCellValueFactory(new PropertyValueFactory<Schedule,String>("type"));
+        nameMenu.setCellValueFactory(new PropertyValueFactory<Model.Menu,String>("name"));
+        priceMenu.setCellValueFactory(new PropertyValueFactory<Model.Menu,String>("price"));
+        typeMenu.setCellValueFactory(new PropertyValueFactory<Model.Menu,String>("type"));
         menuChoiceBox.getItems().add("All");
         menuChoiceBox.getItems().add("ทอด");
         menuChoiceBox.getItems().add("ต้ม");
@@ -112,8 +114,8 @@ public class OrderController {
         menu.setItems(Data);
         Start();
 
-        nameList.setCellValueFactory(new PropertyValueFactory<Schedule,String>("name"));
-        priceList.setCellValueFactory(new PropertyValueFactory<Schedule,String>("price"));
+        nameList.setCellValueFactory(new PropertyValueFactory<Model.Menu,String>("name"));
+        priceList.setCellValueFactory(new PropertyValueFactory<Model.Menu,String>("price"));
         list.setItems(Data2);
 
         listTable.getItems().add("1");
@@ -141,7 +143,7 @@ public class OrderController {
 
     }
     public void sentBtn(){
-        for(Schedule x : Data2){
+        for(Menu x : Data2){
             database.addTolist(x.getName(),x.getPrice(),listTable.getValue());
             database.addTokitchen(x.getName(),listTable.getValue());
         }

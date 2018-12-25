@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.MenuToKitchen;
+import Model.database;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,13 +17,13 @@ public class KitchenController {
     @FXML
     ChoiceBox<String> choiceBox;
     @FXML
-    TableView<Schedule3> kitTable;
+    TableView<MenuToKitchen> kitTable;
     @FXML
-    TableColumn<Schedule3,String> name,table;
+    TableColumn<MenuToKitchen,String> name,table;
     @FXML
     Button delete,show,sentBill;
 
-    ObservableList<Schedule3> Data3= FXCollections.observableArrayList();
+    ObservableList<MenuToKitchen> Data3= FXCollections.observableArrayList();
     public void Start(){
         Data3.clear();
         if(choiceBox.getValue().equals("All")){
@@ -34,7 +36,7 @@ public class KitchenController {
                 String sql = "Select * From kitchen";
                 ResultSet resultSet = statement.executeQuery(sql);
                 while(resultSet.next()){
-                    Data3.add(new Schedule3(resultSet.getString("name"),resultSet.getString("tablee")));
+                    Data3.add(new MenuToKitchen(resultSet.getString("name"),resultSet.getString("tablee")));
 
                 }
                 connection.close();
@@ -54,7 +56,7 @@ public class KitchenController {
                 String sql = "Select * From kitchen Where tablee = '"+choiceBox.getValue() + "'";
                 ResultSet resultSet = statement.executeQuery(sql);
                 while(resultSet.next()){
-                    Data3.add(new Schedule3(resultSet.getString("name"),resultSet.getString("tablee")));
+                    Data3.add(new MenuToKitchen(resultSet.getString("name"),resultSet.getString("tablee")));
 
                 }
                 connection.close();
